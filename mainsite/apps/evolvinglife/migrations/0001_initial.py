@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import mainsite.apps.evolvinglife.libs.fields
 
 
 class Migration(migrations.Migration):
@@ -16,7 +15,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('category', models.TextField(unique=True)),
-                ('colour', mainsite.apps.evolvinglife.libs.fields.ColourField(unique=True, max_length=6)),
+                ('colour', models.IntegerField(unique=True)),
                 ('symbol', models.CharField(unique=True, max_length=1)),
             ],
             options={
@@ -40,7 +39,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('ip', models.GenericIPAddressField(unique=True)),
-                ('colour', mainsite.apps.evolvinglife.libs.fields.ColourField(unique=True, max_length=6)),
+                ('colour', models.IntegerField(unique=True)),
                 ('symbol', models.CharField(unique=True, max_length=1)),
                 ('time', models.DateTimeField(auto_now_add=True)),
             ],
