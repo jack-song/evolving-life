@@ -11,7 +11,7 @@ def read_env():
 
     """
     try:
-        with open('.env') as f:
+        with open(os.path.dirname(os.path.abspath(__file__)) + '/.env') as f:
             content = f.read()
     except IOError:
         content = ''

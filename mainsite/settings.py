@@ -45,6 +45,7 @@ LIBS = (
 
 APPS = (
     'mainsite.apps.evolvinglife',
+    'mainsite.sitetemplates',
 )
 
 INSTALLED_APPS = DEFAULTS + LIBS + APPS
