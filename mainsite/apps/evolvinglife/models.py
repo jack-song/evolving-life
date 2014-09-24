@@ -8,7 +8,7 @@ class User(models.Model):
 	time = models.DateTimeField(auto_now_add=True)
 
 	def __unicode__(self):
-		return self.symbol
+		return self.ip
 
 class UserPoint(models.Model):
 	x = models.IntegerField()
@@ -16,7 +16,7 @@ class UserPoint(models.Model):
 	user = models.ForeignKey(User)
 
 	def __unicode__(self):
-		return self.x + "," + self.y + " : " + self.symbol
+		return self.x + "," + self.y + " : " + " \"" + self.symbol + "\""
 
 class Geography(models.Model):
 	category = models.TextField(unique=True)
@@ -24,7 +24,7 @@ class Geography(models.Model):
 	symbol = models.CharField(max_length=1, unique=True)
 
 	def __unicode__(self):
-		return self.symbol
+		return self.category
 
 class GeographyPoint(models.Model):
 	x = models.IntegerField()
@@ -32,4 +32,4 @@ class GeographyPoint(models.Model):
 	geography = models.ForeignKey(Geography)
 
 	def __unicode__(self):
-		return self.x + "," + self.y + " : " + self.symbol
+		return self.x + "," + self.y + " : " + " \"" + self.symbol + "\""
