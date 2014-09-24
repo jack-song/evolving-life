@@ -16,7 +16,7 @@ class UserPoint(models.Model):
 	user = models.ForeignKey(User)
 
 	def __unicode__(self):
-		return self.x + "," + self.y + " : " + " \"" + self.symbol + "\""
+		return str(self.x) + "," + str(self.y) + " : " + "\"" + self.user.symbol + "\""
 
 class Geography(models.Model):
 	category = models.TextField(unique=True)
@@ -32,4 +32,4 @@ class GeographyPoint(models.Model):
 	geography = models.ForeignKey(Geography)
 
 	def __unicode__(self):
-		return self.x + "," + self.y + " : " + " \"" + self.symbol + "\""
+		return str(self.x) + "," + str(self.y) + " : " + "\"" + self.geography.symbol + "\""
