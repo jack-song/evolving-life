@@ -4,6 +4,8 @@ import models
 class UserPointInLine(admin.TabularInline):
 	model = models.UserPoint
 
+# may be too many to display at some point, but currently at 50 * 50
+# should be ok
 class GeographyPointInLine(admin.TabularInline):
 	model = models.GeographyPoint
 

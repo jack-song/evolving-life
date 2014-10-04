@@ -3,11 +3,11 @@ CREATE TABLE tempy(y integer);
 
 INSERT INTO tempx (x)
 SELECT *
-FROM generate_series(0,100);
+FROM generate_series(0,50);
 
 INSERT INTO tempy (y)
 SELECT *
-FROM generate_series(0,100);
+FROM generate_series(0,50);
 
 INSERT INTO evolvinglife_geographypoint(x, y, geography)
 SELECT tempx.x, tempy.y, evolvinglife_geography.id
