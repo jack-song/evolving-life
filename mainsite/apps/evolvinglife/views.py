@@ -1,7 +1,16 @@
 # coding: utf-8
+from models import Geography
+from models import GeographyPoint
+from django.shortcuts import render
+from django.core import serializers
 
-from django.shortcuts import render_to_response
-from django.shortcuts import RequestContext
+def index(request):
+	#use natural key to serialize needed fields from geographys easily
+	#from each geography point
+	geographypoints_json = serializers.serialize("json", GeographyPoint.objects.all(), use_natural_keys=True)
 
-def home(request):
-    return render_to_response("index.html", RequestContext(request, {}))
+	context = {
+		"geographypoints": geographypoints_json
+	}
+
+	return render(request, "index.html", context)

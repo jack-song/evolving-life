@@ -23,6 +23,9 @@ class Geography(models.Model):
 	colour = models.IntegerField(unique=True)
 	symbol = models.CharField(max_length=1, unique=True)
 
+	def natural_key(self):
+		return (self.colour, self.symbol)
+
 	def __unicode__(self):
 		return self.category
 
